@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taj Opticals | Premium Eyewear & Clinical Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "sans-serif"], serif: ["Playfair Display", "serif"] },
+          colors: { cream: "#FAF8F3", trust: "#14213D", champagne: "#D4AF37", softgold: "#8A6B1F" },
+          boxShadow: { soft: "0 24px 80px rgba(20, 33, 61, 0.12)" }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #FAF8F3; }
+    .soft-glass { background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.85); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .reveal { opacity: 0; transform: translateY(28px); transition: all .8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .image-zoom img { transition: transform .75s ease; }
+    .image-zoom:hover img { transform: scale(1.08); }
+  </style>
+</head>
+<body class="font-sans text-trust overflow-x-hidden">
+
+  <section class="relative min-h-screen flex items-center px-6 py-24 bg-cream overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=1800&q=90" alt="Luxury eyewear boutique" class="w-full h-full object-cover opacity-25" />
+      <div class="absolute inset-0 bg-gradient-to-r from-cream via-cream/95 to-cream/60"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_78%_30%,rgba(212,175,55,0.2),transparent_36%)]"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="inline-flex items-center gap-2 rounded-full soft-glass px-5 py-3 text-xs md:text-sm font-bold tracking-[0.22em] uppercase text-softgold mb-7">
+          <span class="w-2 h-2 rounded-full bg-champagne"></span>Taj Opticals
+        </p>
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8">See the World with Style and Precision.</h1>
+        <p class="max-w-2xl text-lg md:text-xl text-trust/70 leading-8 mb-10">Premium eyewear meets expert clinical care. Discover a curated collection of the world's finest frames and lenses.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#appointment" class="inline-flex items-center justify-center rounded-full bg-trust px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#0B1328]">Book an Eye Test</a>
+          <a href="#collection" class="inline-flex items-center justify-center rounded-full border border-champagne/50 soft-glass px-8 py-4 text-sm font-bold uppercase tracking-wide text-trust transition hover:bg-white">Browse Collection</a>
+        </div>
+      </div>
+      <div class="hidden lg:block reveal">
+        <div class="relative">
+          <div class="absolute -inset-6 rounded-[3rem] bg-champagne/20 blur-3xl"></div>
+          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1100&q=90" alt="Premium sunglasses" class="relative rounded-[3rem] h-[620px] w-full object-cover shadow-2xl border border-white/70" />
+          <div class="absolute left-8 bottom-8 right-8 rounded-3xl soft-glass p-6 shadow-soft">
+            <h3 class="font-serif text-2xl text-trust">Clinical Precision</h3>
+            <p class="text-trust/60">Advanced vision care with boutique-level service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <p class="text-softgold font-bold uppercase tracking-[0.3em] text-xs mb-5">Service Pillars</p>
+        <h2 class="font-serif text-4xl md:text-6xl mb-6">Fashion-Led Eyewear. Clinically Trusted Care.</h2>
+        <p class="text-trust/65 text-lg leading-8">From diagnostic eye testing to luxury frame selection, every Taj Opticals experience is designed around clarity, comfort, and style.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal rounded-[2rem] bg-cream border border-[#E8E1D2] p-8 hover:shadow-soft transition">
+          <div class="w-16 h-16 rounded-full bg-white text-trust border border-champagne/30 flex items-center justify-center mb-8 text-2xl">◉</div>
+          <h3 class="font-serif text-3xl mb-4">Expert Eye Testing</h3>
+          <p class="text-trust/65 leading-8">State-of-the-art diagnostic technology and certified optometrists for precise vision assessment.</p>
+        </article>
+        <article class="reveal rounded-[2rem] bg-cream border border-[#E8E1D2] p-8 hover:shadow-soft transition">
+          <div class="w-16 h-16 rounded-full bg-white text-trust border border-champagne/30 flex items-center justify-center mb-8 text-2xl">⌐⌐</div>
+          <h3 class="font-serif text-3xl mb-4">Designer Frames</h3>
+          <p class="text-trust/65 leading-8">A curated selection of international luxury brands, modern styles, and timeless classics.</p>
+        </article>
+        <article class="reveal rounded-[2rem] bg-cream border border-[#E8E1D2] p-8 hover:shadow-soft transition">
+          <div class="w-16 h-16 rounded-full bg-white text-trust border border-champagne/30 flex items-center justify-center mb-8 text-2xl">◎</div>
+          <h3 class="font-serif text-3xl mb-4">Contact Lens Clinic</h3>
+          <p class="text-trust/65 leading-8">Personalized fittings and premium lens options for comfort, clarity, and everyday confidence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="collection" class="px-6 py-24 bg-cream">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+        <div>
+          <p class="text-softgold font-bold uppercase tracking-[0.3em] text-xs mb-5">The Collection</p>
+          <h2 class="font-serif text-4xl md:text-6xl">Frames for Every Face, Every Lifestyle</h2>
+        </div>
+        <p class="max-w-md text-trust/65 leading-8">Explore curated eyewear collections that bring together comfort, premium craftsmanship, and timeless style.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal image-zoom overflow-hidden rounded-[2rem] bg-white border border-[#E8E1D2] shadow-sm">
+          <div class="h-80 overflow-hidden"><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=1000&q=90" alt="Prescription frames" class="w-full h-full object-cover" /></div>
+          <div class="p-7"><h3 class="font-serif text-3xl mb-3">Prescription Frames</h3><p class="text-trust/65 leading-7">Style meets functionality with refined frames made for daily comfort.</p></div>
+        </article>
+        <article class="reveal image-zoom overflow-hidden rounded-[2rem] bg-white border border-[#E8E1D2] shadow-sm">
+          <div class="h-80 overflow-hidden"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=90" alt="Luxury sunglasses" class="w-full h-full object-cover" /></div>
+          <div class="p-7"><h3 class="font-serif text-3xl mb-3">Luxury Sunglasses</h3><p class="text-trust/65 leading-7">Premium protection with a fashion-forward edge.</p></div>
+        </article>
+        <article class="reveal image-zoom overflow-hidden rounded-[2rem] bg-white border border-[#E8E1D2] shadow-sm">
+          <div class="h-80 overflow-hidden"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=1000&q=90" alt="Kids eyewear" class="w-full h-full object-cover" /></div>
+          <div class="p-7"><h3 class="font-serif text-3xl mb-3">Kids' Eyewear</h3><p class="text-trust/65 leading-7">Durable, lightweight, and stylish options for younger eyes.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 bg-trust text-white">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="text-champagne font-bold uppercase tracking-[0.3em] text-xs mb-5">Quality & Care</p>
+        <h2 class="font-serif text-4xl md:text-6xl mb-7">Every Detail Matters.</h2>
+        <p class="text-white/70 text-lg leading-8 mb-9">Taj Opticals combines modern clinical standards with personalized boutique service — so every customer leaves with the right lenses, the right frame, and lasting confidence.</p>
+        <div class="space-y-5">
+          <div class="flex gap-5 rounded-3xl bg-white/8 border border-white/10 p-5"><div class="w-12 h-12 rounded-full bg-champagne text-trust flex items-center justify-center flex-shrink-0">✓</div><div><h3 class="font-serif text-2xl mb-2">Precision Lenses</h3><p class="text-white/65 leading-7">Custom-crafted lenses designed around your exact vision needs and lifestyle.</p></div></div>
+          <div class="flex gap-5 rounded-3xl bg-white/8 border border-white/10 p-5"><div class="w-12 h-12 rounded-full bg-champagne text-trust flex items-center justify-center flex-shrink-0">✦</div><div><h3 class="font-serif text-2xl mb-2">Style Consultation</h3><p class="text-white/65 leading-7">Expert guidance to help you choose frames that match your face shape and personality.</p></div></div>
+          <div class="flex gap-5 rounded-3xl bg-white/8 border border-white/10 p-5"><div class="w-12 h-12 rounded-full bg-champagne text-trust flex items-center justify-center flex-shrink-0">♡</div><div><h3 class="font-serif text-2xl mb-2">Aftercare Service</h3><p class="text-white/65 leading-7">Professional cleaning, lifetime adjustments, and continued support after purchase.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal relative">
+        <div class="absolute -inset-5 rounded-[2rem] bg-champagne/20 blur-3xl"></div>
+        <img src="https://images.unsplash.com/photo-1580281657521-0f4e3c828c78?auto=format&fit=crop&w=1200&q=90" alt="Modern eye exam" class="relative rounded-[2rem] h-[560px] w-full object-cover border border-white/10" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <p class="text-softgold font-bold uppercase tracking-[0.3em] text-xs mb-5">Boutique Gallery</p>
+        <h2 class="font-serif text-4xl md:text-6xl mb-6">A Clearer View of Elegance</h2>
+        <p class="text-trust/65 text-lg leading-8">A refined optical experience — from expert consultation to modern testing and carefully selected eyewear displays.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-5">
+        <div class="reveal image-zoom md:col-span-2 h-[420px] rounded-[2rem] overflow-hidden border border-[#E8E1D2]"><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=90" alt="Luxury frames" class="w-full h-full object-cover" /></div>
+        <div class="reveal image-zoom h-[420px] rounded-[2rem] overflow-hidden border border-[#E8E1D2]"><img src="https://images.unsplash.com/photo-1580281657521-0f4e3c828c78?auto=format&fit=crop&w=900&q=90" alt="Eye exam" class="w-full h-full object-cover" /></div>
+        <div class="reveal image-zoom h-[420px] rounded-[2rem] overflow-hidden border border-[#E8E1D2]"><img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=900&q=90" alt="Fashion sunglasses" class="w-full h-full object-cover" /></div>
+        <div class="reveal image-zoom md:col-span-2 h-[420px] rounded-[2rem] overflow-hidden border border-[#E8E1D2]"><img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=90" alt="Retail boutique interior" class="w-full h-full object-cover" /></div>
+        <div class="reveal image-zoom md:col-span-2 h-[420px] rounded-[2rem] overflow-hidden border border-[#E8E1D2]"><img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=1000&q=90" alt="Stylish sunglasses" class="w-full h-full object-cover" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment" class="px-6 py-24 bg-cream">
+    <div class="reveal max-w-7xl mx-auto rounded-[2.5rem] bg-white border border-[#E8E1D2] overflow-hidden shadow-soft">
+      <div class="grid lg:grid-cols-2 items-center">
+        <div class="p-8 md:p-14 lg:p-16">
+          <p class="text-softgold font-bold uppercase tracking-[0.3em] text-xs mb-5">Visit Our Boutique</p>
+          <h2 class="font-serif text-4xl md:text-6xl mb-7">Your Perfect Pair Starts Here.</h2>
+          <p class="text-trust/65 text-lg leading-8 mb-9">Book a professional eye test, explore premium eyewear, and experience personalized optical care at Taj Opticals.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#" class="inline-flex items-center justify-center rounded-full bg-trust px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#0B1328]">Book Appointment</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-full border border-champagne/60 bg-cream px-8 py-4 text-sm font-bold uppercase tracking-wide text-trust transition hover:bg-white">Find a Location</a>
+          </div>
+        </div>
+        <div class="relative min-h-[420px]">
+          <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1200&q=90" alt="Luxury optical boutique" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute left-8 bottom-8 rounded-3xl soft-glass p-5 shadow-soft hidden md:block">
+            <h3 class="font-serif text-2xl">Boutique Care</h3>
+            <p class="text-trust/60">Welcoming, precise, and personal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

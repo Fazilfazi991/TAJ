@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Divisions — Taj Middleeast Group</title>
+  <meta name="description" content="Explore the diverse industrial and consumer divisions of Taj Middleeast Group, including Foods, Recycle, Opticals, Packaging, Electronics, and Fragrances." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --theme-bg: #FFFFFF;
+      --theme-primary: #23194e;
+      --theme-secondary: #c0392b;
+      --theme-text: #1a1a1a;
+      --theme-text-light: #444444;
+      --theme-accent-soft: #e9e7f1;
+    }
+    .divisions-hero {
+      background: var(--theme-accent-soft);
+      padding: 120px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .divisions-hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+    .premium-label { text-transform: uppercase; letter-spacing: 0.4em; color: var(--theme-secondary); font-size: 14px; font-weight: 700; margin-bottom: 24px; display: block; }
+    .premium-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 72px); color: var(--theme-primary); margin-bottom: 32px; }
+    
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      padding: 80px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .div-card {
+      background: white;
+      border: 1px solid #eeeeee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .div-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+      border-color: var(--theme-primary);
+    }
+    .div-img-wrap { height: 280px; overflow: hidden; position: relative; }
+    .div-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+    .div-card:hover .div-img-wrap img { transform: scale(1.1); }
+    .div-info { padding: 40px; flex-grow: 1; display: flex; flex-direction: column; }
+    .div-info h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--theme-primary); margin-bottom: 16px; }
+    .div-info p { color: var(--theme-text-light); line-height: 1.7; font-size: 16px; margin-bottom: 32px; flex-grow: 1; }
+    .div-btn {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--theme-secondary);
+      text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 14px;
+    }
+    .div-btn span { transition: transform 0.3s ease; }
+    .div-card:hover .div-btn span { transform: translateX(8px); }
+  </style>
+</head>
+<body class="premium-page">
+    <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="divisions.html">Our Divisions ▾</a>
+        <div class="dropdown-menu">
+          <a href="foods.html">Taj Foods</a>
+          <a href="recycle.html">Taj Recycle</a>
+          <a href="opticals.html">Taj Opticals</a>
+          <a href="packaging.html">Taj Packaging</a>
+          <a href="electronics.html">Taj Electronics</a>
+          <a href="zivo.html">Zivo Perfumes</a>
+        </div>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="products.html">Our Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products-foods.html">Foods & Beverages</a>
+          <a href="products-cleaning.html">Cleaning Products</a>
+          <a href="products-cosmetics.html">Cosmetics</a>
+          <a href="products-diapers.html">Diapers & Tissues</a>
+          <a href="products-household.html">Household Items</a>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile-menu">
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Divisions</a>
+      <div class="mobile-dropdown-menu">
+        <a href="divisions.html">All Divisions Overview</a>
+        <a href="foods.html">Taj Foods</a>
+        <a href="recycle.html">Taj Recycle</a>
+        <a href="opticals.html">Taj Opticals</a>
+        <a href="packaging.html">Taj Packaging</a>
+        <a href="electronics.html">Taj Electronics</a>
+        <a href="zivo.html">Zivo Perfumes</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Products</a>
+      <div class="mobile-dropdown-menu">
+        <a href="products.html">All Products Overview</a>
+        <a href="products-foods.html">Foods & Beverages</a>
+        <a href="products-cleaning.html">Cleaning Products</a>
+        <a href="products-cosmetics.html">Cosmetics</a>
+        <a href="products-diapers.html">Diapers & Tissues</a>
+        <a href="products-household.html">Household Items</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nm-cta">Get in Touch</a>
+  </div>
+  <section class="divisions-hero">
+    <div class="divisions-hero-inner reveal-on-scroll">
+      <span class="premium-label">Group Overview</span>
+      <h1 class="premium-title">Our Diverse Portfolio</h1>
+      <p style="color: var(--theme-text-light); font-size: 19px; line-height: 1.6; max-width: 700px; margin: 0 auto;">From essential food commodities to high-tech industrial solutions, Taj Middleeast Group operates with a commitment to excellence across multiple key sectors.</p>
+    </div>
+  </section>
+
+  <div class="divisions-grid">
+    <!-- Taj Foods -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=85" alt="Taj Foods" /></div>
+      <div class="div-info">
+        <h3>Taj Foods</h3>
+        <p>A leader in food distribution and retail, supplying premium staple commodities and gourmet groceries across the GCC region.</p>
+        <a href="foods.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+    <!-- Taj Recycle -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=85" alt="Taj Recycle" /></div>
+      <div class="div-info">
+        <h3>Taj Recycle</h3>
+        <p>Providing sustainable industrial recycling solutions, specializing in waste management and resource recovery for a greener future.</p>
+        <a href="recycle.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+    <!-- Taj Opticals -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" alt="Taj Opticals" /></div>
+      <div class="div-info">
+        <h3>Taj Opticals</h3>
+        <p>Premium eyewear and clinical optical services, combining medical precision with global luxury fashion brands.</p>
+        <a href="opticals.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+    <!-- Taj Packaging -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=85" alt="Taj Packaging" /></div>
+      <div class="div-info">
+        <h3>Taj Packaging</h3>
+        <p>Custom industrial packaging solutions designed for durability and efficiency across various manufacturing sectors.</p>
+        <a href="packaging.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+    <!-- Taj Electronics -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=800&q=85" alt="Taj Electronics" /></div>
+      <div class="div-info">
+        <h3>Taj Electronics</h3>
+        <p>Distributing cutting-edge consumer electronics and smart-home technology solutions to modern retailers.</p>
+        <a href="electronics.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+    <!-- Zivo Perfumes -->
+    <div class="div-card reveal-on-scroll">
+      <div class="div-img-wrap"><img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85" alt="Zivo Perfumes" /></div>
+      <div class="div-info">
+        <h3>Zivo Perfumes</h3>
+        <p>Artisanal fragrances and luxury scents that capture the essence of heritage and modern elegance.</p>
+        <a href="zivo.html" class="div-btn">Explore Division <span>→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Taj Middle East Co." class="footer-logo-img">
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

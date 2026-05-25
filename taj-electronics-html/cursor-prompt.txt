@@ -1,0 +1,53 @@
+Create a sleek, high-tech inner page for "Taj Electronics", a division of the Taj Middleeast Group.
+
+Use this stack if implementing in React:
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Design direction:
+- Innovation, Connectivity, Smart Living
+- Minimalist, cutting-edge, Apple-esque clean lines
+- Deep Space Black, Electric Blue #007BFF, Silver/Metallic accents
+- Use glassmorphism effects with backdrop-blur-md, semi-transparent cards, subtle borders, and blue glow
+- Typography: Orbitron for small accents and Inter for body text
+- Fully responsive
+
+Page sections:
+1. Hero:
+   - Headline: "Powering the Future of Smart Living."
+   - Subtext: "From advanced components to integrated smart home solutions—bringing the world's best technology to the Middle East."
+   - CTA: "Explore Solutions" and "B2B Inquiries"
+   - Use futuristic smart home hero image with dark overlay and electric blue glow
+
+2. Product Categories:
+   - Smart Home Systems
+   - Electronic Components
+   - Home & Office Appliances
+   - B2B Enterprise Supply
+   - Use glassmorphism cards and futuristic imagery
+
+3. The Smart Advantage:
+   - Seamless Integration
+   - Energy Efficiency
+   - 24/7 Support
+
+4. B2B & Enterprise Solutions:
+   - Corporate clients
+   - Bulk supply chains
+   - Technical consulting
+   - Reliability and infrastructure
+
+5. Tech Showcase:
+   - Smart home interface
+   - Circuit board
+   - Modern appliances
+   - Server room
+   - Sleek gadgets
+
+6. CTA:
+   - "Upgrade Your World"
+   - Button: "Get Started"
+
+Use the included generated image assets from the HTML package as local images if available.

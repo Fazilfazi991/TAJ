@@ -1,0 +1,71 @@
+Create a high-performance modern inner page for "Taj Packaging", a division of the Taj Middleeast Group.
+
+Use this stack:
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Design direction:
+- B2B industrial and manufacturing website
+- Clean, structured, corporate, eco-conscious, and efficient
+- Color palette: Professional Navy Blue, Emerald Green, Clean White, Light Gray
+- Typography: Bold modern sans-serif such as Inter or Montserrat
+- Layout should be grid-heavy, organized, responsive, and conversion-focused
+- Use subtle slide-in and slide-up animations with Framer Motion
+- Use high-quality Unsplash placeholder images related to industrial packaging, eco-friendly boxes, warehouse logistics, and branded containers
+
+Page sections:
+1. Hero Section
+   - Headline: "Packaging That Protects & Empowers Your Brand."
+   - Subtext: "Innovative, sustainable, and custom-engineered packaging solutions for the Middle East’s leading industries."
+   - CTA buttons: "Request a Consultation" and "View Solutions"
+   - Use warehouse/industrial packaging background image with navy overlay and emerald glow
+   - Add a right-side grid of B2B, Eco, GCC, and Safe highlight cards on desktop
+
+2. Core Specializations Feature Grid
+   - 4 cards with icons:
+     - Food-Grade Packaging: Certified safety for the F&B industry
+     - Industrial Wraps: Heavy-duty protection for logistics and manufacturing
+     - Custom Branding: Tailored designs that make products stand out
+     - Eco-Friendly Solutions: Recyclable and biodegradable material options
+
+3. Sustainability Commitment
+   - Title: "The Future is Green."
+   - Explain Taj Packaging’s focus on reducing environmental impact through circular economy principles
+   - Include an image of eco-friendly boxes
+   - Include two mini-cards: Recyclable Materials and Lower Impact
+
+4. Technical Specs / Why Choose Us
+   - 3-column layout with icons:
+     - Durability: Engineered for the toughest GCC climates
+     - Compliance: Meeting international safety and quality standards
+     - Scalability: From small custom runs to massive industrial supply
+
+5. Portfolio Gallery
+   - Clean grid showing packaging types:
+     - Eco-Friendly Boxes
+     - Warehouse Logistics
+     - Industrial Packaging
+     - Branded Containers
+     - Protective Wraps
+     - Export Packaging
+   - Use hover image zoom effect
+
+6. CTA Section
+   - Title: "Partner with Taj Packaging"
+   - Short professional conversion copy
+   - Button: "Get a Quote"
+   - Use a split layout with copy on one side and warehouse/packaging image on the other
+
+Implementation requirements:
+- Create a single React component named TajPackagingPage
+- Use Tailwind utility classes only
+- Use Lucide icons such as PackageCheck, ShieldCheck, Factory, Recycle, Leaf, Boxes, Truck, BadgeCheck, Layers, ArrowRight, ClipboardCheck
+- Use Framer Motion for slide-in and slide-up animations
+- Make the page fully responsive for mobile, tablet, and desktop
+- Keep code clean and ready to paste into an existing Vite/React/Next project
+- Add dependency note:
+  npm install framer-motion lucide-react
+- Add Google Font Inter or Montserrat if needed
+- Design should communicate reliability, sustainability, technical expertise, and industrial trust

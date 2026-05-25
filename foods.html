@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taj Foods — Premium Food Distribution & Retail | Taj Middleeast</title>
+  <meta name="description" content="Taj Foods is a premier food distribution and retail division of Taj Middleeast Group, supplying quality staple commodities and gourmet groceries across the GCC." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --theme-bg: #FFFFFF;
+      --theme-primary: #23194e; /* Taj Green */
+      --theme-secondary: #c0392b; /* Taj Red */
+      --theme-text: #1a1a1a;
+      --theme-text-light: #444444;
+      --theme-accent-soft: #e9e7f1; /* Soft Green */
+    }
+    .premium-page {
+      background-color: var(--theme-bg);
+      color: var(--theme-text);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .premium-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px;
+      overflow: hidden;
+      background: var(--theme-accent-soft);
+    }
+    .premium-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .premium-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+    }
+    .premium-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%);
+      z-index: 1;
+    }
+    .premium-hero-inner {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+    }
+    .premium-label {
+      text-transform: uppercase;
+      letter-spacing: 0.45em;
+      color: var(--theme-secondary);
+      font-size: 14px;
+      margin-bottom: 24px;
+      display: block;
+      font-weight: 700;
+    }
+    .premium-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 7vw, 84px);
+      line-height: 1.1;
+      margin-bottom: 32px;
+      font-weight: 700;
+      color: var(--theme-primary);
+    }
+    .premium-subtitle {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--theme-text-light);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .btn-premium-theme {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--theme-primary);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .btn-premium-theme:hover {
+      background: var(--theme-secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(192, 57, 43, 0.2);
+    }
+    .premium-section {
+      padding: 120px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .premium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+    .premium-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.2;
+      margin-bottom: 32px;
+      color: var(--theme-primary);
+    }
+    .premium-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--theme-text-light);
+      margin-bottom: 24px;
+    }
+    .premium-img-wrap {
+      position: relative;
+    }
+    .premium-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--theme-accent-soft);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+    .premium-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .premium-card {
+      background: white;
+      border: 1px solid #eeeeee;
+      border-radius: 8px;
+      padding: 48px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: var(--theme-primary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .premium-card:hover::before { transform: scaleX(1); }
+    .premium-card:hover {
+      border-color: var(--theme-primary);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .premium-card-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--theme-accent-soft);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; color: var(--theme-primary);
+      margin-bottom: 32px;
+    }
+    .premium-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; margin-bottom: 16px;
+      color: var(--theme-primary);
+    }
+    .premium-card p {
+      font-size: 15px; line-height: 1.7;
+      color: var(--theme-text-light);
+    }
+    .premium-gallery-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .premium-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .gallery-large { grid-column: span 2; }
+    .gallery-img-wrap {
+      overflow: hidden;
+      border-radius: 8px;
+      height: 400px;
+      border: 1px solid #eeeeee;
+    }
+    .gallery-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .gallery-img-wrap:hover .gallery-img { transform: scale(1.1); }
+    .premium-cta-section {
+      text-align: center;
+      background: var(--theme-accent-soft);
+      padding: 120px 24px;
+    }
+    @media (max-width: 1024px) {
+      .premium-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .premium-gallery-grid { grid-template-columns: 1fr; }
+      .gallery-large { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body class="premium-page">
+      <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="divisions.html">Our Divisions ▾</a>
+        <div class="dropdown-menu">
+          <a href="foods.html">Taj Foods</a>
+          <a href="recycle.html">Taj Recycle</a>
+          <a href="opticals.html">Taj Opticals</a>
+          <a href="packaging.html">Taj Packaging</a>
+          <a href="electronics.html">Taj Electronics</a>
+          <a href="zivo.html">Zivo Perfumes</a>
+        </div>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="products.html">Our Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products-foods.html">Foods & Beverages</a>
+          <a href="products-cleaning.html">Cleaning Products</a>
+          <a href="products-cosmetics.html">Cosmetics</a>
+          <a href="products-diapers.html">Diapers & Tissues</a>
+          <a href="products-household.html">Household Items</a>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile-menu">
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Divisions</a>
+      <div class="mobile-dropdown-menu">
+        <a href="divisions.html">All Divisions Overview</a>
+        <a href="foods.html">Taj Foods</a>
+        <a href="recycle.html">Taj Recycle</a>
+        <a href="opticals.html">Taj Opticals</a>
+        <a href="packaging.html">Taj Packaging</a>
+        <a href="electronics.html">Taj Electronics</a>
+        <a href="zivo.html">Zivo Perfumes</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Products</a>
+      <div class="mobile-dropdown-menu">
+        <a href="products.html">All Products Overview</a>
+        <a href="products-foods.html">Foods & Beverages</a>
+        <a href="products-cleaning.html">Cleaning Products</a>
+        <a href="products-cosmetics.html">Cosmetics</a>
+        <a href="products-diapers.html">Diapers & Tissues</a>
+        <a href="products-household.html">Household Items</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nm-cta">Get in Touch</a>
+  </div>
+  <section class="premium-hero">
+    <div class="premium-hero-bg">
+      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1800&q=90" alt="Premium food ingredients" />
+    </div>
+    <div class="premium-hero-overlay"></div>
+    <div class="premium-hero-inner reveal-on-scroll">
+      <span class="premium-label">Taj Foods</span>
+      <h1 class="premium-title">Quality Food,<br>Delivered Fresh.</h1>
+      <p class="premium-subtitle">From staple commodities to gourmet groceries—sourcing and distributing the world's best food products across the Middle East.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#channels" class="btn-premium-theme">Explore Channels <span>→</span></a>
+        <a href="products-foods.html" class="btn-premium-theme">Food Products <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section">
+    <div class="premium-grid">
+      <div class="premium-content reveal-on-scroll">
+        <span class="premium-label">Wholesale & Retail</span>
+        <h2>Feeding the Region.</h2>
+        <p>Taj Foods is our flagship division, built on a foundation of reliability and culinary excellence. We serve as a vital link in the Middle Eastern food supply chain, connecting global producers with local businesses and consumers.</p>
+        <p>Whether it's bulk grains for industrial kitchens or curated specialties for our neighbourhood MiniStores, we ensure every product meets the highest standards of freshness and quality.</p>
+      </div>
+      <div class="premium-img-wrap reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=90" alt="Fresh market produce" class="premium-img" />
+      </div>
+    </div>
+  </section>
+
+  <section id="channels" class="premium-section" style="background: #f9f9f9;">
+    <div class="premium-gallery-header reveal-on-scroll">
+      <span class="premium-label">Our Channels</span>
+      <h2>A Multi-Channel Approach</h2>
+      <p style="max-width: 800px; margin: 24px auto; color: var(--theme-text-light);">We reach our customers through specialized distribution networks and modern retail concepts.</p>
+    </div>
+    <div class="premium-feature-grid">
+      <div class="premium-card reveal-on-scroll">
+        <div class="premium-card-icon">🏛</div>
+        <h3>Wholesale Distribution</h3>
+        <p>Supplying hotels, restaurants, and supermarkets with bulk staple commodities and specialty goods.</p>
+      </div>
+      <div class="premium-card reveal-on-scroll">
+        <div class="premium-card-icon">🏪</div>
+        <h3>Taj MiniStore</h3>
+        <p>Our neighbourhood retail concept bringing everyday essentials and premium groceries to your doorstep.</p>
+      </div>
+      <div class="premium-card reveal-on-scroll">
+        <div class="premium-card-icon">🚢</div>
+        <h3>Global Sourcing</h3>
+        <p>A vast network of international suppliers ensuring a consistent supply of premium food products year-round.</p>
+      </div>
+      <div class="premium-card reveal-on-scroll">
+        <div class="premium-card-icon">⚖</div>
+        <h3>Quality Control</h3>
+        <p>Rigorous testing and grading to ensure every batch of Taj Foods meets strict regional health standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section">
+    <div style="text-align: center; margin-bottom: 64px;" class="reveal-on-scroll">
+      <a href="products-foods.html" class="btn-premium-theme">Food Products <span>→</span></a>
+    </div>
+    <div class="premium-grid">
+      <div class="premium-img-wrap reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1200&q=90" alt="Sustainable farming and pulses" class="premium-img" />
+      </div>
+      <div class="premium-content reveal-on-scroll">
+        <span class="premium-label">The Taj Standard</span>
+        <h2>Staples of Excellence</h2>
+        <div style="margin-top: 32px;">
+           <div style="margin-bottom: 24px; border-left: 3px solid var(--theme-secondary); padding-left: 20px;">
+             <h4 style="color: var(--theme-primary); font-family: 'Playfair Display'; font-size: 20px; margin-bottom: 8px;">Premium Grains</h4>
+             <p style="font-size: 16px; color: var(--theme-text-light);">Sourcing the world's finest Basmati rice, pulses, and wheat for superior culinary results.</p>
+           </div>
+           <div style="margin-bottom: 24px; border-left: 3px solid var(--theme-secondary); padding-left: 20px;">
+             <h4 style="color: var(--theme-primary); font-family: 'Playfair Display'; font-size: 20px; margin-bottom: 8px;">Gourmet Spices</h4>
+             <p style="font-size: 16px; color: var(--theme-text-light);">High-potency spices and herbs, including A-grade Saffron and Himalayan salt.</p>
+           </div>
+           <div style="border-left: 3px solid var(--theme-secondary); padding-left: 20px;">
+             <h4 style="color: var(--theme-primary); font-family: 'Playfair Display'; font-size: 20px; margin-bottom: 8px;">Neighborhood Retail</h4>
+             <p style="font-size: 16px; color: var(--theme-text-light);">Over 50+ Taj MiniStore locations planned to serve communities across Saudi Arabia.</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section">
+    <div class="premium-gallery-header reveal-on-scroll">
+      <span class="premium-label">Product Showcase</span>
+      <h2>From Origin to Table</h2>
+      <p style="max-width: 800px; margin: 24px auto; color: var(--theme-text-light);">A look at the diverse product range and retail environments of the Taj Foods division.</p>
+    </div>
+    <div class="premium-gallery-grid">
+      <div class="gallery-img-wrap gallery-large reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80" alt="Spices" class="gallery-img" />
+      </div>
+      <div class="gallery-img-wrap reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Grocery" class="gallery-img" />
+      </div>
+      <div class="gallery-img-wrap reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=80" alt="Pulses" class="gallery-img" />
+      </div>
+      <div class="gallery-img-wrap gallery-large reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=80" alt="MiniStore interior" class="gallery-img" />
+      </div>
+      <div class="gallery-img-wrap gallery-large reveal-on-scroll">
+        <img src="middle-eastern-food.png" alt="Middle Eastern dates, nuts and spices" class="gallery-img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-cta-section reveal-on-scroll">
+    <span class="premium-label">Work With Us</span>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); margin-bottom: 24px;">Quality Sourcing Starts Here.</h2>
+    <p style="font-size: 18px; color: var(--theme-text-light); max-width: 700px; margin: 0 auto 40px;">Are you a retail partner, distributor, or food service provider? Contact our sales team for wholesale pricing and partnership opportunities.</p>
+    <a href="contact.html" class="btn-premium-theme">Contact Sales <span>→</span></a>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Taj Middle East Co." class="footer-logo-img">
+        <p>A trusted multi-industry group serving the Middle East with quality, integrity, and commitment across multiple specialized divisions.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Divisions</div>
+        <ul>
+          <li><a href="foods.html">Taj Foods</a></li>
+          <li><a href="recycle.html">Taj Recycle</a></li>
+          <li><a href="opticals.html">Taj Opticals</a></li>
+          <li><a href="packaging.html">Taj Packaging</a></li>
+          <li><a href="electronics.html">Taj Electronics</a></li>
+          <li><a href="zivo.html">Zivo Perfumes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="portal.html">Distributor Portal</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Taj Middleeast Group. All rights reserved.</p>
+      <div class="footer-dividers">
+        <span class="footer-div-tag">Taj Foods</span>
+        <span class="footer-div-tag">Taj Recycle</span>
+        <span class="footer-div-tag">Taj Opticals</span>
+        <span class="footer-div-tag">Taj Packaging</span>
+        <span class="footer-div-tag">Taj Electronics</span>
+        <span class="footer-div-tag">Zivo Perfumes</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taj Middleeast — A Legacy of Excellence</title>
+  <meta name="description" content="Taj Middleeast Group — trusted multi-industry company across foods, optics, packaging and electronics in the GCC." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Tab Buttons Styling */
+    .contact-tabs-container {
+      display: flex;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .contact-tab-btn {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-light);
+      padding: 12px 24px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    .contact-tab-btn:hover {
+      color: var(--green);
+    }
+    .contact-tab-btn.active {
+      color: var(--green);
+      font-weight: 700;
+    }
+    .contact-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    /* Tab Panels */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease both;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Introductory Text */
+    .contact-intro-text {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Map Link */
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .map-link:hover {
+      color: var(--red-light);
+    }
+
+    /* Custom Form Submit Button */
+    .contact-form-submit {
+      background: var(--red);
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+    .contact-form-submit:hover {
+      background: var(--red-light);
+      transform: translateY(-1px);
+    }
+    .contact-form-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    /* Division Contacts email links */
+    .div-contact-email a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .div-contact-email a:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+      .contact-section .division-contacts {
+        grid-column: 1 / -1;
+        margin-top: 60px;
+        border-top: 1px solid var(--border);
+        padding-top: 40px;
+      }
+      .division-contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 80px;
+      }
+      @media (max-width: 768px) {
+        .contact-section .division-contacts {
+          margin-top: 40px;
+          padding-top: 30px;
+        }
+        .division-contacts-grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .div-contact-column:first-child .div-contact-row:last-child {
+          border-bottom: 1px solid var(--border);
+        }
+      }
+    </style>
+</head>
+<body>
+      <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="divisions.html">Our Divisions ▾</a>
+        <div class="dropdown-menu">
+          <a href="foods.html">Taj Foods</a>
+          <a href="recycle.html">Taj Recycle</a>
+          <a href="opticals.html">Taj Opticals</a>
+          <a href="packaging.html">Taj Packaging</a>
+          <a href="electronics.html">Taj Electronics</a>
+          <a href="zivo.html">Zivo Perfumes</a>
+        </div>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="products.html">Our Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products-foods.html">Foods & Beverages</a>
+          <a href="products-cleaning.html">Cleaning Products</a>
+          <a href="products-cosmetics.html">Cosmetics</a>
+          <a href="products-diapers.html">Diapers & Tissues</a>
+          <a href="products-household.html">Household Items</a>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile-menu">
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Divisions</a>
+      <div class="mobile-dropdown-menu">
+        <a href="divisions.html">All Divisions Overview</a>
+        <a href="foods.html">Taj Foods</a>
+        <a href="recycle.html">Taj Recycle</a>
+        <a href="opticals.html">Taj Opticals</a>
+        <a href="packaging.html">Taj Packaging</a>
+        <a href="electronics.html">Taj Electronics</a>
+        <a href="zivo.html">Zivo Perfumes</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Products</a>
+      <div class="mobile-dropdown-menu">
+        <a href="products.html">All Products Overview</a>
+        <a href="products-foods.html">Foods & Beverages</a>
+        <a href="products-cleaning.html">Cleaning Products</a>
+        <a href="products-cosmetics.html">Cosmetics</a>
+        <a href="products-diapers.html">Diapers & Tissues</a>
+        <a href="products-household.html">Household Items</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nm-cta">Get in Touch</a>
+  </div>
+  <div class="page-hero reveal-on-scroll">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=85" alt="Contact Us" />
+    </div>
+    <div class="page-hero-inner">
+      <h1 class="page-hero-title">Contact Us</h1>
+      <p class="page-hero-desc">Get in touch with the Taj Middleeast team.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section reveal-on-scroll">
+    <div class="contact-form-wrap">
+      <div class="section-label">Reach Out</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-intro-text">Have a question or want to partner with us? Select the type of inquiry below and fill out the form. Our team will get back to you within 24 hours.</p>
+      
+      <div class="contact-tabs-container" style="display: none;">
+        <button class="contact-tab-btn active" data-tab="general">General Inquiry</button>
+      </div>
+
+      <!-- General Inquiry Form -->
+      <form id="general-contact-form" class="tab-panel active">
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="gen-name">Full Name</label>
+            <input type="text" id="gen-name" name="name" placeholder="Mohammed Al Rashidi" autocomplete="name" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gen-email">Email Address</label>
+            <input type="email" id="gen-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <div class="form-group">
+            <label for="gen-phone">Phone Number (Optional)</label>
+            <input type="tel" id="gen-phone" name="phone" placeholder="+966 50 000 0000" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gen-subject">Subject</label>
+            <input type="text" id="gen-subject" name="subject" placeholder="General Inquiry / Feedback" required />
+          </div>
+          <div class="form-group">
+            <label for="gen-division">Division of Interest</label>
+            <select id="gen-division" name="division" required>
+              <option value="">Select a Division</option>
+              <option value="Taj Foods">Taj Foods</option>
+              <option value="Taj Recycle">Taj Recycle</option>
+              <option value="Taj Opticals">Taj Opticals</option>
+              <option value="Taj Packaging">Taj Packaging</option>
+              <option value="Taj Electronics">Taj Electronics</option>
+              <option value="Zivo Perfumes">Zivo Perfumes</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="gen-message">Message</label>
+            <textarea id="gen-message" name="message" placeholder="Tell us how we can help you…" required></textarea>
+          </div>
+        </div>
+        <button class="contact-form-submit" type="submit">Send Message</button>
+      </form>
+
+      <!-- Business Query Form removed -->
+    </div>
+
+    <div class="contact-info">
+      <div class="section-label">Contact Details</div>
+      <h2 class="section-title">We're Here<br />for You</h2>
+      
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-label">Head Office Address</div>
+          <div class="info-card-value">
+            Building 2742, Anas Ibn Malik Street<br />
+            Sedr District, Al Jumum<br />
+            Post 25341, Makkah Al Mukarama<br />
+            Saudi Arabia
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Sedr+District,+Al+Jumum,+Makkah,+Saudi+Arabia" target="_blank" rel="noopener noreferrer" class="map-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Open in Google Maps
+          </a>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-card-label">Direct Contacts</div>
+          <div class="info-card-value">
+            <strong>Phone:</strong> <a href="tel:+966555040912" style="color:inherit; text-decoration:none;">+966 555 040 912</a><br />
+            <strong>Email:</strong> <a href="mailto:info@tajmiddleeast.com" style="color:inherit; text-decoration:none;">info@tajmiddleeast.com</a>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-card-label">Business Hours</div>
+          <div class="info-card-value">
+            Sunday – Thursday: 8:00 AM – 5:00 PM (AST)<br />
+            Friday – Saturday: Closed
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Division Contacts spanning full-width at the bottom, 3 on left and 3 on right -->
+    <div class="division-contacts">
+      <div class="division-contacts-title">Division Direct Contacts</div>
+      <div class="division-contacts-grid">
+        <div class="div-contact-column">
+          <div class="div-contact-row">
+            <span class="div-contact-name">Taj Foods</span>
+            <span class="div-contact-email">
+              <a href="mailto:tajfoodstrading@gmail.com">tajfoodstrading@gmail.com</a>
+            </span>
+          </div>
+          <div class="div-contact-row">
+            <span class="div-contact-name">Taj Recycle</span>
+            <span class="div-contact-email">
+              <a href="mailto:recycle@tajmiddleeast.com">recycle@tajmiddleeast.com</a>
+            </span>
+          </div>
+          <div class="div-contact-row">
+            <span class="div-contact-name">Taj Opticals</span>
+            <span class="div-contact-email">
+              <a href="mailto:opticals@tajmiddleeast.com">opticals@tajmiddleeast.com</a>
+            </span>
+          </div>
+        </div>
+        <div class="div-contact-column">
+          <div class="div-contact-row">
+            <span class="div-contact-name">Taj Packaging</span>
+            <span class="div-contact-email">
+              <a href="mailto:packaging@tajmiddleeast.com">packaging@tajmiddleeast.com</a>
+            </span>
+          </div>
+          <div class="div-contact-row">
+            <span class="div-contact-name">Taj Electronics</span>
+            <span class="div-contact-email">
+              <a href="mailto:electronics@tajmiddleeast.com">electronics@tajmiddleeast.com</a>
+            </span>
+          </div>
+          <div class="div-contact-row">
+            <span class="div-contact-name">Zivo Perfumes</span>
+            <span class="div-contact-email">
+              <a href="mailto:zivo@tajmiddleeast.com">zivo@tajmiddleeast.com</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Taj Middle East Co." class="footer-logo-img">
+        <p>A trusted multi-industry group serving the Middle East with quality, integrity, and commitment across four specialized divisions.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Divisions</div>
+        <ul>
+          <li><a href="foods.html">Taj Foods</a></li>
+          <li><a href="recycle.html">Taj Recycle</a></li>
+          <li><a href="opticals.html">Taj Opticals</a></li>
+          <li><a href="packaging.html">Taj Packaging</a></li>
+          <li><a href="electronics.html">Taj Electronics</a></li>
+          <li><a href="zivo.html">Zivo Perfumes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="portal.html">Distributor Portal</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Taj Middleeast Group. All rights reserved.</p>
+      <div class="footer-dividers">
+        <span class="footer-div-tag">Taj Foods</span>
+        <span class="footer-div-tag">Taj Recycle</span>
+        <span class="footer-div-tag">Taj Opticals</span>
+        <span class="footer-div-tag">Taj Packaging</span>
+        <span class="footer-div-tag">Taj Electronics</span>
+        <span class="footer-div-tag">Zivo Perfumes</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Form tab switcher
+      const tabButtons = document.querySelectorAll('.contact-tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Deactivate all buttons and panels
+          tabButtons.forEach(b => b.classList.remove('active'));
+          tabPanels.forEach(p => p.classList.remove('active'));
+
+          // Activate clicked button and corresponding panel
+          btn.classList.add('active');
+          const targetTab = btn.getAttribute('data-tab');
+          document.getElementById(`tab-${targetTab}`).classList.add('active');
+        });
+      });
+
+      // Handle submissions for general and business forms
+      const generalForm = document.getElementById('general-contact-form');
+      const businessForm = document.getElementById('business-query-form');
+
+      const handleFormSubmit = (form) => {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('.contact-form-submit');
+          const originalText = btn.innerText;
+          const originalBg = btn.style.backgroundColor;
+          
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+          btn.style.opacity = '0.7';
+
+          setTimeout(() => {
+            btn.innerText = 'Submitted Successfully!';
+            btn.style.backgroundColor = '#27ae60'; // Success green
+            btn.style.color = '#ffffff';
+            btn.style.opacity = '1';
+
+            // Reset all fields
+            form.reset();
+
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.style.backgroundColor = originalBg;
+              btn.style.color = '';
+              btn.disabled = false;
+            }, 3000);
+          }, 1500);
+        });
+      };
+
+      if (generalForm) handleFormSubmit(generalForm);
+      if (businessForm) handleFormSubmit(businessForm);
+    });
+  </script>
+</body>
+</html>

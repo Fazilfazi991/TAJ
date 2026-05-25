@@ -1,0 +1,100 @@
+Create a powerful, high-impact inner page for "Taj Recycle", a division of the Taj Middleeast Group.
+
+Use this stack:
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Design direction:
+- Heavy industry, engineering, environmental services, and recycling website
+- Rugged, professional, large-scale, safe, and eco-conscious
+- Color palette:
+  - Industrial Slate/Charcoal
+  - Safety Orange #FF8C00
+  - Forest Green for sustainability elements
+- Typography:
+  - Strong, bold, condensed sans-serif
+  - Use Archivo or Roboto Condensed
+- Layout style:
+  - Blocky, structured, solid, reliable
+  - Strong grid system
+  - Sharp industrial cards and sections
+  - Avoid soft luxury styling; make it powerful and industrial
+
+Page sections:
+
+1. Hero Section
+   - Headline: "Transforming Industrial Waste into Global Resources."
+   - Subtext: "Leading the Middle East in scrap processing and industrial demolition with a focus on the circular economy."
+   - CTA buttons:
+     - "Enquire for Services"
+     - "Our Impact"
+   - Use a heavy excavator / demolition / industrial background image
+   - Add dark charcoal overlay with orange and green industrial glow
+   - On desktop, include blocky visual cards: SAFE, GREEN, SCALE, TRUST
+
+2. Impact Stats
+   - Large number cards:
+     - 1M+ Tons: Processed Annually
+     - 15+ Years: Industrial Expertise
+     - Zero-Waste Goal: Driving the Circular Economy
+   - Use bold numbers, orange accent borders, and dark background
+
+3. Core Services
+   - Split/grid layout with 2 large service cards:
+     - Dismantling & Demolition:
+       Engineering-driven site clearance, factory decommissioning, structural dismantling, and heavy machinery removal
+     - Scrap Processing:
+       Advanced sorting and processing of ferrous, non-ferrous, and non-metallic materials
+   - Use Framer Motion staggered entrance animations
+   - Use strong imagery and industrial icons
+
+4. The Circular Economy
+   - Title: "Collect → Process → Re-use"
+   - Diagrammatic 3-step layout:
+     - Collect
+     - Process
+     - Re-use
+   - Use icons and arrow connectors on desktop
+   - Explain how industrial waste is recovered and redirected into productive supply chains
+
+5. Safety & Compliance
+   - High-trust section titled: "Safety First. Every Site. Every Shift."
+   - Highlight:
+     - Site-specific safety planning
+     - Trained industrial workforce
+     - Compliant logistics handling
+     - Controlled demolition protocols
+     - International quality standards
+     - Responsible material documentation
+   - Use checklist layout and strong industrial image
+
+6. Industrial Gallery
+   - Grid showing:
+     - Industrial Scrap Yard
+     - Heavy Excavator Operations
+     - Recycling Plant
+     - Demolition Site
+     - Metal Processing
+     - Industrial Logistics
+   - Use high-quality Unsplash images matching industrial scrap, demolition site, recycling plant, and heavy excavator
+
+7. CTA Section
+   - Title: "Move Waste. Recover Value. Build Responsibly."
+   - Section label: "Start Your Industrial Project"
+   - CTA button: "Contact Form"
+   - Split layout with image and strong industrial copy
+
+Implementation requirements:
+- Create a single React component named TajRecyclePage
+- Use Tailwind utility classes only
+- Use Lucide icons including Recycle, Factory, Truck, ShieldCheck, HardHat, Hammer, ArrowRight, CheckCircle2, RotateCcw, PackageCheck, Leaf, AlertTriangle, and Cog
+- Use Framer Motion for heavy entrance animations
+- Use staggered entrance animation for the service cards
+- Ensure the page is fully responsive for mobile, tablet, and desktop
+- Make the page ready to paste into an existing React/Vite/Next project
+- Add dependency note:
+  npm install framer-motion lucide-react
+- Add Google Font Archivo or Roboto Condensed if needed
+- Keep the design industrial, powerful, structured, and conversion-focused

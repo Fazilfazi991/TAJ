@@ -1,0 +1,23 @@
+Create a sophisticated, clean, bright inner page for Taj Opticals, a division of Taj Middleeast Group.
+
+Design direction:
+- Premium eyewear + clinical eye care
+- Balance fashion/luxury with medical trust
+- Airy, boutique-style, precise, welcoming
+- Plenty of white space
+- Color palette: Soft White, Champagne Gold, deep Trust Blue / Charcoal
+- Typography: Playfair Display for high-end serif headings, Inter for clinical/readable body text
+
+Sections:
+1. Hero: See the World with Style and Precision. CTA: Book an Eye Test, Browse Collection
+2. Service Pillars: Expert Eye Testing, Designer Frames, Contact Lens Clinic
+3. Collection: Prescription Frames, Luxury Sunglasses, Kids' Eyewear
+4. Quality & Care: Precision Lenses, Style Consultation, Aftercare Service
+5. Boutique Gallery: luxury glasses, optometrist office, eye exam, fashionable sunglasses, retail interior
+6. CTA: Visit Our Boutique, Book Appointment, Find a Location
+
+Implementation:
+- Tailwind CSS
+- Soft fade-in animations
+- Fully responsive
+- Clean, bright, sophisticated, high-trust.

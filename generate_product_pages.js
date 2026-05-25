@@ -1,0 +1,205 @@
+const fs = require('fs');
+const path = require('path');
+
+const categories = [
+    { id: 'foods', name: 'Foods & Beverages', dir: 'foods-and-beverages' },
+    { id: 'cleaning', name: 'Cleaning Products', dir: 'cleaning' },
+    { id: 'cosmetics', name: 'Cosmetics', dir: 'cosmetics' },
+    { id: 'diapers', name: 'Diapers & Tissues', dir: 'diapers-and-tissues' },
+    { id: 'household', name: 'Household Items', dir: 'household-items' }
+];
+
+const template = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{NAME}} — Taj Middleeast</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --theme-bg: #FFFFFF;
+      --theme-primary: #23194e;
+      --theme-secondary: #c0392b;
+      --theme-text: #1a1a1a;
+      --theme-text-light: #444444;
+      --theme-accent-soft: #e9e7f1;
+      --whatsapp-green: #25D366;
+    }
+    .product-page-hero {
+      background: var(--theme-accent-soft);
+      padding: 100px 24px 60px;
+      text-align: center;
+    }
+    .product-page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--theme-primary);
+      margin-bottom: 16px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 60px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-item {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .product-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-color: var(--theme-primary);
+    }
+    .product-img-box {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      background: #fdfdfd;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    .product-img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .product-name {
+      font-weight: 600;
+      color: var(--theme-text);
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    .btn-enquiry {
+      background: var(--whatsapp-green);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+    .btn-enquiry:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+    .whatsapp-icon {
+        width: 16px;
+        height: 16px;
+        fill: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="divisions.html">Our Divisions ▾</a>
+        <div class="dropdown-menu">
+          <a href="foods.html">Taj Foods</a>
+          <a href="recycle.html">Taj Recycle</a>
+          <a href="opticals.html">Taj Opticals</a>
+          <a href="packaging.html">Taj Packaging</a>
+          <a href="electronics.html">Taj Electronics</a>
+          <a href="zivo.html">Zivo Perfumes</a>
+        </div>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="products.html">Our Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products-foods.html">Foods & Beverages</a>
+          <a href="products-cleaning.html">Cleaning Products</a>
+          <a href="products-cosmetics.html">Cosmetics</a>
+          <a href="products-diapers.html">Diapers & Tissues</a>
+          <a href="products-household.html">Household Items</a>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <section class="product-page-hero">
+    <h1>{{NAME}}</h1>
+    <p>Premium quality products sourced and distributed by Taj Middleeast.</p>
+  </section>
+
+  <div class="product-grid">
+    {{PRODUCTS}}
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Taj Middle East Co." class="footer-logo-img">
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>`;
+
+categories.forEach(cat => {
+    const dirPath = path.join('taj-products', cat.dir);
+    if (!fs.existsSync(dirPath)) {
+        console.log(`Directory ${dirPath} not found, skipping.`);
+        return;
+    }
+
+    const files = fs.readdirSync(dirPath).filter(f => f.match(/\.(jpg|jpeg|png|webp)$/i));
+    
+    files.sort();
+
+    const productHtml = files.map(file => {
+        const name = path.parse(file).name;
+        const imgSrc = encodeURI(`taj-products/${cat.dir}/${file}`);
+        const waText = encodeURIComponent(`Hello Taj Middleeast, I am enquiring about the product: ${name}`);
+        const waLink = `https://wa.me/966555040912?text=${waText}`;
+
+        return `
+    <div class="product-item">
+      <div class="product-img-box">
+        <img src="${imgSrc}" alt="${name}" loading="lazy">
+      </div>
+      <div class="product-name">${name}</div>
+      <a href="${waLink}" target="_blank" class="btn-enquiry">
+        <svg class="whatsapp-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.5l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54 81.2 54 130.4 0 101.7-82.8 184.5-184.5 184.5zm100.5-138c-5.5-2.8-32.6-16.1-37.7-18-5.1-1.9-8.8-2.8-12.4 2.8-3.6 5.6-14.1 18-17.3 21.6-3.2 3.6-6.4 4-11.9 1.3-5.5-2.8-23.3-8.6-44.4-27.5-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.4 8.3-9.6 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.6-1.5-2.8-12.4-29.8-17-40.8-4.5-10.8-9.1-9.3-12.4-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.6-13.3 37.2-26.2 4.6-12.9 4.6-24 3.2-26.2-1.4-2.2-5.1-3.6-10.6-6.4z"/></svg>
+        Enquiry
+      </a>
+    </div>`;
+    }).join('');
+
+    const pageContent = template
+        .split('{{NAME}}').join(cat.name)
+        .split('{{PRODUCTS}}').join(productHtml);
+
+    fs.writeFileSync(`products-${cat.id}.html`, pageContent);
+    console.log(`Created products-${cat.id}.html with enquiry buttons`);
+});

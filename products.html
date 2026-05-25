@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products — The Taj Collection | Taj Middleeast</title>
+  <meta name="description" content="Explore the diverse and premium product portfolio of Taj Middleeast Group, spanning fragrances, high-quality foods, cleaning products, cosmetics, and industrial solutions." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --theme-bg: #FFFFFF;
+      --theme-primary: #23194e;
+      --theme-secondary: #c0392b;
+      --theme-text: #1a1a1a;
+      --theme-text-light: #444444;
+      --theme-accent-soft: #e9e7f1;
+    }
+    .premium-page { background-color: var(--theme-bg); color: var(--theme-text); font-family: 'DM Sans', sans-serif; }
+    .products-hero { position: relative; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 24px; overflow: hidden; background: var(--theme-accent-soft); }
+    .products-hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .products-hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
+    .products-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%); z-index: 1; }
+    .products-hero-inner { position: relative; z-index: 10; max-width: 900px; }
+    .premium-label { text-transform: uppercase; letter-spacing: 0.45em; color: var(--theme-secondary); font-size: 14px; margin-bottom: 24px; display: block; font-weight: 700; }
+    .premium-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 72px); line-height: 1.1; margin-bottom: 32px; font-weight: 700; color: var(--theme-primary); }
+    
+    .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; padding: 80px 24px; max-width: 1280px; margin: 0 auto; }
+    .category-card { background: white; border: 1px solid #eeeeee; border-radius: 12px; overflow: hidden; transition: all 0.4s ease; display: flex; flex-direction: column; }
+    .category-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--theme-primary); }
+    .cat-img-wrap { height: 240px; overflow: hidden; }
+    .cat-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .category-card:hover .cat-img-wrap img { transform: scale(1.1); }
+    .cat-info { padding: 32px; flex-grow: 1; display: flex; flex-direction: column; }
+    .cat-info h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--theme-primary); margin-bottom: 12px; }
+    .cat-info p { color: var(--theme-text-light); line-height: 1.6; margin-bottom: 24px; font-size: 15px; flex-grow: 1; }
+    .btn-cat { display: inline-flex; align-items: center; gap: 8px; color: var(--theme-secondary); text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; }
+    .btn-cat:hover { gap: 12px; color: var(--theme-primary); }
+  </style>
+</head>
+<body class="premium-page">
+      <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="divisions.html">Our Divisions ▾</a>
+        <div class="dropdown-menu">
+          <a href="foods.html">Taj Foods</a>
+          <a href="recycle.html">Taj Recycle</a>
+          <a href="opticals.html">Taj Opticals</a>
+          <a href="packaging.html">Taj Packaging</a>
+          <a href="electronics.html">Taj Electronics</a>
+          <a href="zivo.html">Zivo Perfumes</a>
+        </div>
+      </li>
+      <li class="nav-item-dropdown">
+        <a href="products.html">Our Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products-foods.html">Foods & Beverages</a>
+          <a href="products-cleaning.html">Cleaning Products</a>
+          <a href="products-cosmetics.html">Cosmetics</a>
+          <a href="products-diapers.html">Diapers & Tissues</a>
+          <a href="products-household.html">Household Items</a>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile-menu">
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Divisions</a>
+      <div class="mobile-dropdown-menu">
+        <a href="divisions.html">All Divisions Overview</a>
+        <a href="foods.html">Taj Foods</a>
+        <a href="recycle.html">Taj Recycle</a>
+        <a href="opticals.html">Taj Opticals</a>
+        <a href="packaging.html">Taj Packaging</a>
+        <a href="electronics.html">Taj Electronics</a>
+        <a href="zivo.html">Zivo Perfumes</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown-container">
+      <a class="mobile-dropdown-toggle">Our Products</a>
+      <div class="mobile-dropdown-menu">
+        <a href="products.html">All Products Overview</a>
+        <a href="products-foods.html">Foods & Beverages</a>
+        <a href="products-cleaning.html">Cleaning Products</a>
+        <a href="products-cosmetics.html">Cosmetics</a>
+        <a href="products-diapers.html">Diapers & Tissues</a>
+        <a href="products-household.html">Household Items</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nm-cta">Get in Touch</a>
+  </div>
+  <section class="products-hero">
+    <div class="products-hero-bg"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=80" alt="Products" /></div>
+    <div class="products-hero-overlay"></div>
+    <div class="products-hero-inner">
+      <span class="premium-label">Product Categories</span>
+      <h1 class="premium-title">Explore Our Full Range</h1>
+      <p style="color: var(--theme-text-light); font-size: 18px; max-width: 700px; margin: 0 auto;">From gourmet foods to industrial essentials, discover the quality that defines the Taj Middleeast portfolio.</p>
+    </div>
+  </section>
+
+  <div class="category-grid">
+    <!-- Category 1 -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Foods" /></div>
+      <div class="cat-info">
+        <h3>Foods & Beverages</h3>
+        <p>Premium staples, gourmet spices, and fresh grocery essentials sourced from across the globe.</p>
+        <a href="products-foods.html" class="btn-cat">View 50+ Products →</a>
+      </div>
+    </div>
+    <!-- Category 2 -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1584622781564-1d9876a13d00?auto=format&fit=crop&w=800&q=80" alt="Cleaning" /></div>
+      <div class="cat-info">
+        <h3>Cleaning Products</h3>
+        <p>Trusted industrial and domestic hygiene solutions from world-renowned brands.</p>
+        <a href="products-cleaning.html" class="btn-cat">View Products →</a>
+      </div>
+    </div>
+    <!-- Category 3 -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Cosmetics" /></div>
+      <div class="cat-info">
+        <h3>Cosmetics & Personal Care</h3>
+        <p>Luxury and everyday personal care products for a sophisticated lifestyle.</p>
+        <a href="products-cosmetics.html" class="btn-cat">View Products →</a>
+      </div>
+    </div>
+    <!-- Category 4 -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1563811771046-ba984ff30900?auto=format&fit=crop&w=800&q=80" alt="Diapers" /></div>
+      <div class="cat-info">
+        <h3>Diapers & Tissues</h3>
+        <p>Essential hygiene products designed for comfort, protection, and daily reliability.</p>
+        <a href="products-diapers.html" class="btn-cat">View Products →</a>
+      </div>
+    </div>
+    <!-- Category 5 -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=80" alt="Household" /></div>
+      <div class="cat-info">
+        <h3>Household Items</h3>
+        <p>A versatile range of products designed to enhance the modern home environment.</p>
+        <a href="products-household.html" class="btn-cat">View Products →</a>
+      </div>
+    </div>
+    <!-- Fragrances -->
+    <div class="category-card reveal-on-scroll">
+      <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80" alt="Fragrances" /></div>
+      <div class="cat-info">
+        <h3>Luxury Fragrances</h3>
+        <p>Discover Zivo Perfumes — artisanal scents that define elegance and heritage.</p>
+        <a href="zivo.html" class="btn-cat">View Division →</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="premium-cta">
+    <div class="reveal-on-scroll">
+      <span class="premium-label">Bulk Inquiries</span>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 40px; margin-bottom: 20px; color: var(--theme-primary);">Partner With the Best.</h2>
+      <p style="color: var(--theme-text-light); max-width: 600px; margin: 0 auto 32px;">Our supply chain expertise ensures consistent quality and timely delivery across the GCC.</p>
+      <a href="contact.html" class="nav-cta" style="padding: 16px 40px; font-size: 16px;">Contact Our Sales Team</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Taj Middle East Co." class="footer-logo-img">
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

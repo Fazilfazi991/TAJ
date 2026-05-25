@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taj Electronics | Smart Living & Enterprise Technology</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            orbitron: ["Orbitron", "sans-serif"],
+          },
+          colors: {
+            space: "#05070D",
+            electric: "#007BFF",
+            silver: "#C7CEDB",
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(0, 123, 255, 0.35)",
+          }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #05070D; }
+    .glass {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .blue-glow { box-shadow: 0 0 80px rgba(0, 123, 255, 0.22); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scanline { position: relative; overflow: hidden; }
+    .scanline::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(0, 123, 255, 0.14) 50%, transparent 100%);
+      transform: translateX(-120%);
+      animation: scan 4.5s infinite;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0% { transform: translateX(-120%); }
+      55% { transform: translateX(120%); }
+      100% { transform: translateX(120%); }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-white overflow-x-hidden">
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center px-6 py-24 bg-space">
+    <div class="absolute inset-0">
+      <img src="./images/hero-smart-living.png" alt="Futuristic smart living interior" class="w-full h-full object-cover opacity-45" />
+      <div class="absolute inset-0 bg-gradient-to-r from-space via-space/90 to-space/40"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_72%_26%,rgba(0,123,255,0.28),transparent_34%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(5,7,13,0.92))]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="inline-flex items-center gap-3 rounded-full glass px-5 py-3 text-xs md:text-sm font-orbitron uppercase tracking-[0.26em] text-blue-200 mb-7">
+          <span class="w-2 h-2 rounded-full bg-electric shadow-glow"></span>
+          Taj Electronics
+        </p>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-7">
+          Powering the Future of
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-electric">Smart Living.</span>
+        </h1>
+
+        <p class="max-w-2xl text-lg md:text-xl text-slate-300 leading-8 mb-10">
+          From advanced components to integrated smart home solutions—bringing the world's best technology to the Middle East.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#solutions" class="inline-flex items-center justify-center rounded-full bg-electric px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-glow transition hover:bg-blue-400">
+            Explore Solutions
+          </a>
+          <a href="#enterprise" class="inline-flex items-center justify-center rounded-full glass px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-white/15">
+            B2B Inquiries
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden lg:grid grid-cols-2 gap-5 reveal">
+        <div class="glass rounded-3xl p-6 blue-glow">
+          <p class="font-orbitron text-electric text-xs uppercase tracking-[0.25em] mb-8">01 / Smart</p>
+          <h3 class="text-4xl font-black mb-3">Home</h3>
+          <p class="text-slate-300 leading-7">Automation for lighting, climate, security, and connected living.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 mt-12">
+          <p class="font-orbitron text-electric text-xs uppercase tracking-[0.25em] mb-8">02 / Precision</p>
+          <h3 class="text-4xl font-black mb-3">Parts</h3>
+          <p class="text-slate-300 leading-7">Electronic components for consumer and industrial applications.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 -mt-4">
+          <p class="font-orbitron text-electric text-xs uppercase tracking-[0.25em] mb-8">03 / Supply</p>
+          <h3 class="text-4xl font-black mb-3">B2B</h3>
+          <p class="text-slate-300 leading-7">Reliable sourcing and enterprise-grade supply support.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <p class="font-orbitron text-electric text-xs uppercase tracking-[0.25em] mb-8">04 / Support</p>
+          <h3 class="text-4xl font-black mb-3">24/7</h3>
+          <p class="text-slate-300 leading-7">Expert technical assistance and project guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <section id="solutions" class="relative px-6 py-24 bg-space">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(0,123,255,0.14),transparent_30%)]"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <div class="reveal max-w-3xl mb-14">
+        <p class="font-orbitron text-electric uppercase tracking-[0.3em] text-xs mb-5">Product Categories</p>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">Connected Technology for Every Environment</h2>
+        <p class="text-slate-400 text-lg leading-8">
+          Taj Electronics delivers future-ready solutions across homes, workplaces, industries, and large-scale enterprise projects.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="reveal glass scanline rounded-3xl overflow-hidden group">
+          <div class="h-56 overflow-hidden">
+            <img src="./images/smart-home-systems.png" alt="Smart Home Systems" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <p class="font-orbitron text-electric text-xs uppercase tracking-[0.22em] mb-4">Automation</p>
+            <h3 class="text-xl font-extrabold mb-3">Smart Home Systems</h3>
+            <p class="text-slate-400 leading-7 text-sm">Integrated automation for lighting, security, and climate.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass scanline rounded-3xl overflow-hidden group">
+          <div class="h-56 overflow-hidden">
+            <img src="./images/electronic-components.png" alt="Electronic Components" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <p class="font-orbitron text-electric text-xs uppercase tracking-[0.22em] mb-4">Precision</p>
+            <h3 class="text-xl font-extrabold mb-3">Electronic Components</h3>
+            <p class="text-slate-400 leading-7 text-sm">High-precision parts for industrial and consumer manufacturing.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass scanline rounded-3xl overflow-hidden group">
+          <div class="h-56 overflow-hidden">
+            <img src="./images/home-office-appliances.png" alt="Home and Office Appliances" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <p class="font-orbitron text-electric text-xs uppercase tracking-[0.22em] mb-4">Efficiency</p>
+            <h3 class="text-xl font-extrabold mb-3">Home & Office Appliances</h3>
+            <p class="text-slate-400 leading-7 text-sm">Reliable, energy-efficient tech for everyday life.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass scanline rounded-3xl overflow-hidden group">
+          <div class="h-56 overflow-hidden">
+            <img src="./images/b2b-enterprise-supply.png" alt="B2B Enterprise Supply" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <p class="font-orbitron text-electric text-xs uppercase tracking-[0.22em] mb-4">Enterprise</p>
+            <h3 class="text-xl font-extrabold mb-3">B2B Enterprise Supply</h3>
+            <p class="text-slate-400 leading-7 text-sm">Bulk sourcing and tech infrastructure for large-scale projects.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART ADVANTAGE -->
+  <section class="px-6 py-24 bg-[#080B14]">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="font-orbitron text-electric uppercase tracking-[0.3em] text-xs mb-5">The Smart Advantage</p>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-7">Designed to Work Together. Built to Last.</h2>
+        <p class="text-slate-400 text-lg leading-8 mb-8">
+          Our electronics and smart solutions are selected for seamless performance, energy efficiency, and long-term reliability.
+        </p>
+
+        <div class="space-y-4">
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-extrabold text-xl mb-2">Seamless Integration</h3>
+            <p class="text-slate-400 leading-7">Devices, controls, systems, and support work together with minimal friction.</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-extrabold text-xl mb-2">Energy Efficiency</h3>
+            <p class="text-slate-400 leading-7">Smarter technology designed to save power, cost, and operational load.</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-extrabold text-xl mb-2">24/7 Support</h3>
+            <p class="text-slate-400 leading-7">Expert technical assistance for installations, upgrades, and enterprise needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal glass rounded-[2rem] overflow-hidden blue-glow">
+        <img src="./images/tech-showcase.png" alt="Premium technology showcase" class="w-full h-[520px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTERPRISE -->
+  <section id="enterprise" class="px-6 py-24 bg-space">
+    <div class="max-w-7xl mx-auto rounded-[2rem] overflow-hidden glass">
+      <div class="grid lg:grid-cols-2">
+        <div class="p-8 md:p-14 lg:p-16 reveal">
+          <p class="font-orbitron text-electric uppercase tracking-[0.3em] text-xs mb-5">B2B & Enterprise Solutions</p>
+          <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-7">Reliable Technology Supply for Serious Projects.</h2>
+          <p class="text-slate-400 text-lg leading-8 mb-8">
+            From bulk sourcing to technical consulting, Taj Electronics supports enterprise clients with dependable supply chains,
+            product knowledge, and scalable technology infrastructure.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-4 mb-9">
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <h4 class="text-2xl font-black text-electric mb-1">Bulk</h4>
+              <p class="text-sm text-slate-400">Supply capacity</p>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <h4 class="text-2xl font-black text-electric mb-1">Tech</h4>
+              <p class="text-sm text-slate-400">Consulting</p>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <h4 class="text-2xl font-black text-electric mb-1">Scale</h4>
+              <p class="text-sm text-slate-400">Project-ready</p>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-electric px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-glow transition hover:bg-blue-400">
+            B2B Inquiries
+          </a>
+        </div>
+
+        <div class="relative min-h-[420px] reveal">
+          <img src="./images/b2b-enterprise-supply.png" alt="Enterprise server and supply environment" class="absolute inset-0 w-full h-full object-cover opacity-90" />
+          <div class="absolute inset-0 bg-gradient-to-r from-space via-space/40 to-transparent lg:hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="px-6 py-24 bg-[#080B14]">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+        <div>
+          <p class="font-orbitron text-electric uppercase tracking-[0.3em] text-xs mb-5">Tech Showcase</p>
+          <h2 class="text-3xl md:text-5xl font-black tracking-tight">Precision. Performance. Possibility.</h2>
+        </div>
+        <p class="max-w-md text-slate-400 leading-8">
+          A visual system of smart homes, electronic components, modern appliances, and enterprise technology environments.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="reveal md:col-span-2 rounded-3xl overflow-hidden glass">
+          <img src="./images/smart-home-systems.png" alt="Smart home interface" class="w-full h-[360px] object-cover hover:scale-105 transition duration-700" />
+        </div>
+        <div class="reveal md:col-span-2 rounded-3xl overflow-hidden glass">
+          <img src="./images/electronic-components.png" alt="Circuit boards and components" class="w-full h-[360px] object-cover hover:scale-105 transition duration-700" />
+        </div>
+        <div class="reveal rounded-3xl overflow-hidden glass">
+          <img src="./images/home-office-appliances.png" alt="Modern kitchen appliances" class="w-full h-[340px] object-cover hover:scale-105 transition duration-700" />
+        </div>
+        <div class="reveal rounded-3xl overflow-hidden glass">
+          <img src="./images/b2b-enterprise-supply.png" alt="Server room technology" class="w-full h-[340px] object-cover hover:scale-105 transition duration-700" />
+        </div>
+        <div class="reveal md:col-span-2 rounded-3xl overflow-hidden glass">
+          <img src="./images/tech-showcase.png" alt="Smart devices and gadgets" class="w-full h-[340px] object-cover hover:scale-105 transition duration-700" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="relative px-6 py-28 bg-space">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,123,255,0.18),transparent_45%)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center reveal">
+      <p class="font-orbitron text-electric uppercase tracking-[0.3em] text-xs mb-5">Upgrade Your World</p>
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-8">Smarter Technology Starts Here.</h2>
+      <p class="max-w-2xl mx-auto text-slate-400 text-lg leading-8 mb-10">
+        Whether you are building a smarter home, sourcing components, or planning an enterprise technology project,
+        Taj Electronics is ready to support your next upgrade.
+      </p>
+      <a href="#" class="inline-flex items-center justify-center rounded-full bg-electric px-9 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-glow transition hover:bg-blue-400">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

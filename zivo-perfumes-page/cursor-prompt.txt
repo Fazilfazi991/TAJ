@@ -1,0 +1,75 @@
+Create a premium luxury inner page for "Zivo Perfumes", a division of Taj Middleeast Group.
+
+Use this stack:
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Design direction:
+- Luxury perfume brand page
+- Premium, elegant, expensive, high-fashion look
+- Color palette: Deep Charcoal, Gold #D4AF37, Soft Cream
+- Typography: Elegant serif headings using Playfair Display and clean sans-serif body
+- Fully responsive for mobile, tablet, and desktop
+- Use subtle fade-in-up animations on scroll using Framer Motion
+
+Page sections:
+1. Hero Section
+   - Full-width immersive visual section
+   - Headline: "The Art of Unforgettable Scents."
+   - Subtext: "Crafted for elegance. Designed for legacy. Discover the essence of Zivo."
+   - CTA button: "Explore the Collection"
+   - Dark luxury gradient overlay with gold glow
+
+2. Brand Story Section
+   - Title: "A Legacy of Fragrance"
+   - Explain Zivo's craftsmanship, premium Oud, Amber, Damask Rose, Sandalwood, and timeless fragrance identity
+   - Use a premium two-column layout with image on one side
+
+3. The Collections Product Grid
+   - 4 elegant cards:
+     - Signature Scents
+     - Oud Collections
+     - Luxury Gift Sets
+     - Private Blends
+   - Each card should include image, icon, title, and short description
+   - Hover zoom image effect
+
+4. Visual Gallery
+   - Title: "The Zivo Experience"
+   - Use clean luxury masonry/grid layout
+   - Use high-quality placeholder perfume/luxury lifestyle images
+   - Add border and rounded premium look
+
+5. The Notes Ingredients Section
+   - Icon-based cards for:
+     - Rare Oud
+     - Damask Rose
+     - Pure Amber
+     - Sandalwood
+
+6. CTA Footer
+   - Title: "Find Your Signature Scent"
+   - Short persuasive copy
+   - Button: "Contact Us"
+
+Implementation requirements:
+- Create a single React component named ZivoPerfumesPage
+- Use Tailwind utility classes only
+- Use custom gold gradients in buttons and decorative highlights
+- Add Framer Motion fade-in-up animations
+- Use Lucide icons such as Sparkles, Gem, Gift, Droplets, Flower2, Flame, Leaf, ArrowRight
+- Use Unsplash placeholder images matching luxury perfume aesthetics
+- Keep the design minimal, refined, and conversion-focused
+- Ensure no broken imports
+- Make the component ready to place inside an existing React/Vite/Next project
+- Add notes for installing dependencies:
+  npm install framer-motion lucide-react
+- Add Google Font Playfair Display and configure Tailwind serif font if needed
+
+Use the provided Zivo store/product photos as brand inspiration:
+- Black and gold perfume branding
+- Premium showroom with yellow/gold lighting
+- Elegant retail display
+- Luxury Middle Eastern perfume vibe
