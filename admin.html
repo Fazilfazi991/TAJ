@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Admin Dashboard | Taj Middleeast</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --admin-primary: #23194e;
+      --admin-red: #c0392b;
+      --admin-border: #e6e1d8;
+      --admin-bg: #f7f5f0;
+      --admin-text: #1c1a18;
+      --admin-muted: #66615b;
+    }
+    body { background: var(--admin-bg); color: var(--admin-text); font-family: 'DM Sans', sans-serif; }
+    .admin-shell { max-width: 1240px; margin: 0 auto; padding: 110px 24px 48px; }
+    .admin-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .admin-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5vw, 56px); color: var(--admin-primary); margin: 0 0 8px; }
+    .admin-header p { max-width: 650px; color: var(--admin-muted); margin: 0; line-height: 1.6; }
+    .admin-link { color: var(--admin-red); font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .admin-status { display: inline-flex; margin-top: 12px; padding: 8px 10px; border-radius: 6px; background: #eee9df; color: var(--admin-primary); font-size: 13px; font-weight: 700; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card, .admin-panel { background: #fff; border: 1px solid var(--admin-border); border-radius: 8px; }
+    .stat-card { padding: 20px; }
+    .stat-card span { display: block; color: var(--admin-muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .stat-card strong { display: block; color: var(--admin-primary); font-size: 34px; margin-top: 6px; }
+    .admin-layout { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; gap: 24px; align-items: start; }
+    .admin-panel { padding: 22px; }
+    .admin-panel h2 { margin: 0 0 18px; color: var(--admin-primary); font-size: 22px; }
+    .field { display: grid; gap: 8px; margin-bottom: 16px; }
+    .field label { font-size: 13px; font-weight: 700; color: var(--admin-primary); }
+    .field input, .field select { width: 100%; border: 1px solid var(--admin-border); border-radius: 6px; padding: 12px 13px; font: inherit; color: var(--admin-text); background: #fff; }
+    .field small { color: var(--admin-muted); line-height: 1.5; }
+    .button-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .primary-btn, .secondary-btn, .icon-btn { border: 0; border-radius: 6px; cursor: pointer; font-weight: 700; font-family: inherit; }
+    .primary-btn { background: var(--admin-primary); color: #fff; padding: 12px 18px; }
+    .secondary-btn { background: #eee9df; color: var(--admin-primary); padding: 12px 18px; }
+    .danger-outline { background: #fff; color: var(--admin-red); border: 1px solid #ebc3bd; }
+    .toolbar { display: grid; grid-template-columns: 1fr 220px auto; gap: 12px; margin-bottom: 16px; }
+    .product-table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th, td { padding: 13px 10px; text-align: left; border-bottom: 1px solid var(--admin-border); vertical-align: middle; }
+    th { color: var(--admin-primary); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    td img { width: 54px; height: 54px; object-fit: contain; background: #fafafa; border: 1px solid #eee; border-radius: 6px; }
+    td strong { display: block; color: var(--admin-text); }
+    td span { display: block; color: var(--admin-muted); font-size: 12px; margin-top: 2px; }
+    .icon-btn { background: #eee9df; color: var(--admin-primary); padding: 9px 12px; margin-right: 6px; }
+    .icon-btn.danger { background: #f9e9e6; color: var(--admin-red); }
+    @media (max-width: 900px) {
+      .admin-header, .admin-layout { display: block; }
+      .admin-link { display: inline-block; margin-top: 16px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .admin-panel { margin-bottom: 20px; }
+      .toolbar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Taj Middle East Co." style="max-height: 42px; display: block;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="admin.html" class="nav-cta">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <h1>Product Admin Dashboard</h1>
+        <p>Add, edit, and delete catalogue products. Product cards on the public pages automatically generate the same WhatsApp enquiry message from the product name.</p>
+        <span class="admin-status" id="connectionStatus">Checking storage...</span>
+      </div>
+      <a class="admin-link" href="products.html">View products</a>
+    </header>
+
+    <section class="stats-grid" aria-label="Catalogue summary">
+      <div class="stat-card"><span>Total products</span><strong id="totalProducts">0</strong></div>
+      <div class="stat-card"><span>Dashboard added</span><strong id="customProducts">0</strong></div>
+      <div class="stat-card"><span>Deleted original</span><strong id="hiddenProducts">0</strong></div>
+    </section>
+
+    <section class="admin-layout">
+      <form class="admin-panel" id="productForm">
+        <h2 id="formTitle">Add Product</h2>
+        <input type="hidden" id="productId">
+        <div class="field">
+          <label for="productName">Product name</label>
+          <input id="productName" required placeholder="Example: Taj Premium Rice">
+        </div>
+        <div class="field">
+          <label for="productCategory">Category</label>
+          <select id="productCategory" required></select>
+        </div>
+        <div class="field">
+          <label for="productImage">Image URL or existing path</label>
+          <input id="productImage" placeholder="taj-products/foods-and-beverages/product.jpg">
+          <small>Use a product image path, online image URL, or upload an image below.</small>
+        </div>
+        <div class="field">
+          <label for="productFile">Upload image</label>
+          <input id="productFile" type="file" accept="image/*">
+        </div>
+        <div class="button-row">
+          <button class="primary-btn" id="submitBtn" type="submit">Add Product</button>
+          <button class="secondary-btn" id="cancelBtn" type="button">Clear</button>
+        </div>
+      </form>
+
+      <section class="admin-panel">
+        <div class="toolbar">
+          <input id="searchInput" type="search" placeholder="Search products">
+          <select id="filterCategory"></select>
+          <button class="secondary-btn danger-outline" id="resetBtn" type="button">Reset All</button>
+        </div>
+        <div class="product-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="supabase-config.js"></script>
+  <script src="supabase-products.js"></script>
+  <script src="admin.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
